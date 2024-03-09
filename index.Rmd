@@ -13,7 +13,7 @@ github-repo: giseldo/estatistica
 
 # Introdução
 
-É importante começarmos pelos conceitos básicos para criar um vocabulário consistente e permitir uma comunicação clara entre os interessados em discutir e aprender estatística e análise de dados.
+É importante começarmos pelos conceitos básicos para criar um vocabulário consistente e permitir uma comunicação clara entre os interessados em discutir e aprender estatística e análise de dados. Estatística e análise de dados é uma habilidade crucial no processo de extração de informação para tomada de decisão. A quantidade de dados disponível para consulta vem crescendo exponencialmente e analisar estes dados tem sido útil para diversas organizações.
 
 ## Estimativas de localização
 
@@ -24,7 +24,7 @@ idades <-c(14,15,16,14,17)
 idades
 ```
 
-Podemos representar essa lista com um número mais simples, que pode resumir ou representar aquela lista original. Para isso, existem algumas **estimativas de localização** que podem ser utilizadas. As mais comuns são **média** e **mediana**.
+Podemos representar essa lista com um número mais simples, que pode resumir ou representar aquela lista original. Para isso, utilizamos as **estimativas de localização**. As mais comuns são **média** e **mediana**.
 
 ### Média
 
@@ -43,7 +43,7 @@ idades <- c(14, 15, 16, 14, 17)
 mean(idades)
 ```
 
-A função **mean** no r recebe como parâmetro uma lista de itens e retorna a média da lista de números.
+A função **mean,** no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista.
 
 ## Tipo do Dado
 
@@ -79,9 +79,9 @@ O dado do tipo categórico ordinal também é um tipo especial, é quando ele fa
 
 ## Estatistical Data Analisys
 
-Um dos pioneiros na definição da área de análise exploratória de dados (em inglês Estatistical Data Analisys, ou EDA) foi Tukey (1997) [@tukey1977exploratory]. Tukey (1997) afirmou que era anteriormente mais focado em inferências a partir de exemplos particulares para a população geral. Grande foco dele e de outros estatísticos estavam em desenvolver novas técnicas para inferência. Porém, a partir de sua experiência - e depois de reflexão, ele chega a conclusão de que o foco, dele e de outros estatísticos, seria melhor aplicado no desenvolvimento de técnicas para a análise dos dados, anterior a esse processo inferência. Era nos procedimentos de estruturar os dados que na pratica estava o verdadeiro desafio. Problemas tais como, lidar com dados faltantes e com dados *outliers* traziam impactos negativos. Sua recomendação era a construção de uma mudança de paradigma e novos estudos. Sua visão é que isso iria trazer enorme avanços como um todo.
+Um dos pioneiros na definição da área de análise exploratória de dados (em inglês Estatistical Data Analisys, ou EDA) foi Tukey (1997) [@tukey1977exploratory]. Tukey (1997) em seu artigo disse que era anteriormente mais focado em inferências a partir de exemplos particulares para a população. O foco dele e de outros estatísticos estavam em desenvolver novas técnicas para inferência. Porém, depois de reflexão, ele chega a conclusão de que o foco dele e de outros estatísticos seria melhor aplicado no desenvolvimento de técnicas para a análise dos dados anterior a esse processo inferência. Era nos procedimentos de estruturar os dados que na estava o verdadeiro desafio. Problemas, tais como, lidar com dados faltantes e com dados *outliers* traziam impactos negativos e novas técnicas nessa etapa precisavam ser criadas. Sua recomendação era uma mudança de paradigma e novos estudos. Sua visão é que isso iria trazer enorme avanços como um todo. O que de fato aconteceu.
 
-Podemos considerar a necessidade de estudos anterior ao processo de inferência analisando o exemplo criado por Ancobe.
+Podemos considerar essa necessidade de estudos anterior ao processo de inferência analisando o exemplo criado por Ancobe.
 
 ```{r}
 library(data.table)
@@ -100,6 +100,8 @@ Veja a imagem "Amostra 1" acima. Nela visualmente percebemos uma relação entra
 cor(x, y)  
 ```
 
+Para os dados da Amostra 1, acima temos uma correlação de
+
 ```{r}
 library(data.table)
 library(ggplot2)
@@ -109,4 +111,5 @@ DT = data.table(x, y)
 ggplot(DT, mapping = aes(x = x, y =y)) +
   geom_point() +
   labs(title = "Amostra 2")
+
 ```
