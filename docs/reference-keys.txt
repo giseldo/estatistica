@@ -25,3 +25,5 @@ tipo-do-dado
 dado-numérico
 dado-categórico
 estatistical-data-analisys
+numérico
+categórico
