@@ -1,13 +1,9 @@
-Welcome! 
+# Aprenda estatística e análise de dados 
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+# sobre
 
-This template provides a skeleton file structure that you can edit to create your book. 
+Um livro sobre estatística e análise de dados, com exemplos em R e python.
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
+## licence
 
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+This work is licensed under Attribution-NonCommercial-ShareAlike 4.0 International 
