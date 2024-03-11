@@ -139,6 +139,8 @@
 
 Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.
 
+R
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{idades }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{14}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{16}\NormalTok{,}\DecValTok{14}\NormalTok{,}\DecValTok{17}\NormalTok{)}
@@ -149,6 +151,8 @@ Muitas vezes é conveniente representar um conjunto de números de uma forma mai
 \begin{verbatim}
 ## [1] 14 15 16 14 17
 \end{verbatim}
+
+Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -170,6 +174,8 @@ A média é calculada dividindo a soma de todos os números da lista pela quanti
 
 No nosso exemplo se fossemos calcular manualmente a média da lista \textbf{idade}, o cálculo seria:
 
+R
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{( }\DecValTok{14} \SpecialCharTok{+} \DecValTok{15} \SpecialCharTok{+} \DecValTok{16} \SpecialCharTok{+} \DecValTok{14} \SpecialCharTok{+} \DecValTok{17}\NormalTok{ ) }\SpecialCharTok{/} \DecValTok{5}
@@ -179,6 +185,8 @@ No nosso exemplo se fossemos calcular manualmente a média da lista \textbf{idad
 \begin{verbatim}
 ## [1] 15.2
 \end{verbatim}
+
+Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -192,6 +200,8 @@ No nosso exemplo se fossemos calcular manualmente a média da lista \textbf{idad
 
 Porém, utilizar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
 
+R
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{idades }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{14}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{16}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{17}\NormalTok{)}
@@ -202,6 +212,8 @@ Porém, utilizar algumas funções que já disponibilizam esse recurso. O códig
 \begin{verbatim}
 ## [1] 15.2
 \end{verbatim}
+
+Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -254,17 +266,11 @@ Um exemplo de \textbf{dado categórico}, é uma lista com as cores preferidas do
 
 O dado do tipo \textbf{categórico binário} é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
 
-O dado do tipo \textbf{categórico ordinal} é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente com os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
+O dado do tipo \textbf{categórico ordinal} é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2987}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7013}}@{}}
+\begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Variável
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Tipo do dado (númerico discreto, numérico contínuo, categórico binário, categório ordinal ou categório)
-\end{minipage} \\
+Variável & Tipo do dado \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -284,14 +290,14 @@ Cores preferidas (Azul, verde, vermelho) & categórico \\
 \hypertarget{introduuxe7uxe3o-1}{%
 \section{Introdução}\label{introduuxe7uxe3o-1}}
 
-Um dos pioneiros na definição da área de análise exploratória de dados (em inglês Estatistical Data Analisys, ou EDA) foi Tukey (1997) \citep{tukey1977exploratory}. Tukey (1997) defende que seu foco estava em desenvolver novas técnicas para inferência. Porém, depois de reflexão, ele chega a conclusão de que o foco dele, e de outros estatísticos, seria melhor aplicado no desenvolvimento de técnicas para a análise dos dados anterior a esse processo inferência. Era nos procedimentos de estruturar os dados que estava o verdadeiro desafio. Problemas, tais como, lidar com dados faltantes ou \emph{outliers,} traziam impactos negativos na inferência e novas técnicas nessa etapa precisavam ser estudadas. Sua recomendação era uma mudança de paradigma e novos estudos, voltando mais para a preparação dos dados. Sua visão é de que isso iria trazer enorme avanços como um todo. O que de fato aconteceu.
+Um dos pioneiros na definição da área de análise exploratória de dados (em inglês Estatistical Data Analisys, ou EDA) foi Tukey (1997) \citep{tukey1977exploratory}. Tukey (1997) argumenta que seu foco, até aquele momento, estava em desenvolver novas técnicas para inferência. Porém, depois de reflexão, ele chega a conclusão de que o foco dele, e de outros estatísticos, seria melhor aplicado no desenvolvimento de técnicas para a etapa de preparação desses dados. Era nos procedimentos de estruturar os dados que estava o verdadeiro desafio. Problemas, tais como, lidar com dados faltantes ou \emph{outliers,} traziam impactos negativos na inferência e novas técnicas nessa etapa precisavam ser estudadas. Sua recomendação era uma mudança de paradigma e novos estudos, voltando mais para a preparação dos dados. Sua visão é de que isso iria trazer enorme avanços como um todo. O que de fato aconteceu.
 
 Podemos considerar essa necessidade de estudos anterior ao processo de inferência analisando o exemplo criado por Ancobe.
 
+R
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(data.table)}
-\FunctionTok{library}\NormalTok{(ggplot2)}
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{4}\NormalTok{ , }\DecValTok{12}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{)}
 \NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{8.04}\NormalTok{, }\FloatTok{6.95}\NormalTok{, }\FloatTok{7.58}\NormalTok{, }\FloatTok{8.81}\NormalTok{, }\FloatTok{8.33}\NormalTok{, }\FloatTok{9.96}\NormalTok{, }\FloatTok{7.24}\NormalTok{, }\FloatTok{4.26}\NormalTok{, }\FloatTok{10.84}\NormalTok{, }\FloatTok{4.82}\NormalTok{, }\FloatTok{5.68}\NormalTok{)}
 \NormalTok{DT }\OtherTok{=} \FunctionTok{data.table}\NormalTok{(x, y)}
@@ -301,9 +307,25 @@ Podemos considerar essa necessidade de estudos anterior ao processo de inferênc
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-7-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-8-1.pdf}
 
-Veja a imagem ``Amostra 1'' acima. Nela visualmente percebemos uma relação entra duas variáveis, podemos confirmar isso analisando o gráfico de pontos e o valor da correlação.
+Python
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ [}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{4}\NormalTok{ , }\DecValTok{12}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{]}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ [}\FloatTok{8.04}\NormalTok{, }\FloatTok{6.95}\NormalTok{, }\FloatTok{7.58}\NormalTok{, }\FloatTok{8.81}\NormalTok{, }\FloatTok{8.33}\NormalTok{, }\FloatTok{9.96}\NormalTok{, }\FloatTok{7.24}\NormalTok{, }\FloatTok{4.26}\NormalTok{, }\FloatTok{10.84}\NormalTok{, }\FloatTok{4.82}\NormalTok{, }\FloatTok{5.68}\NormalTok{]}
+\NormalTok{plt.scatter(x, y)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+Veja a imagem ``Amostra 1'' acima. Nela visualmente percebemos uma relação linear direta entre as duas variáveis, podemos confirmar isso analisando o gráfico de pontos e o valor da correlação, abaixo.
+
+R
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -315,12 +337,25 @@ Veja a imagem ``Amostra 1'' acima. Nela visualmente percebemos uma relação ent
 ## [1] 0.8164205
 \end{verbatim}
 
-Para os dados da Amostra 1, acima temos uma correlação de
+Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(data.table)}
-\FunctionTok{library}\NormalTok{(ggplot2)}
+\ImportTok{from}\NormalTok{ statistics }\ImportTok{import}\NormalTok{ correlation}
+\BuiltInTok{print}\NormalTok{(correlation(x, y))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0.81642051634484
+\end{verbatim}
+
+Para os dados da Amostra 1, acima temos uma correlação de 0.81.
+
+R
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{4}\NormalTok{ , }\DecValTok{12}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{)}
 \NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{9.14}\NormalTok{, }\FloatTok{8.14}\NormalTok{, }\FloatTok{8.74}\NormalTok{,}\FloatTok{8.77}\NormalTok{,}\FloatTok{9.26}\NormalTok{,}\FloatTok{8.1}\NormalTok{,}\FloatTok{6.13}\NormalTok{,}\FloatTok{3.1}\NormalTok{,}\FloatTok{9.11}\NormalTok{,}\FloatTok{7.26}\NormalTok{,}\FloatTok{4.74}\NormalTok{)}
 \NormalTok{DT }\OtherTok{=} \FunctionTok{data.table}\NormalTok{(x, y)}
@@ -330,7 +365,9 @@ Para os dados da Amostra 1, acima temos uma correlação de
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -340,7 +377,9 @@ Para os dados da Amostra 1, acima temos uma correlação de
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+Na amostra 2 percebemos uma relação em forma de curva, quando verificamos a correlação verificamos o mesmo valor de 0.81 dos dados da amostra 1.
 
   \bibliography{book.bib,packages.bib}
 

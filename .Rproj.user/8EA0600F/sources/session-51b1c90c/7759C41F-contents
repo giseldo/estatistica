@@ -18,10 +18,14 @@ github-repo: giseldo/estatistica
 
 Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.
 
+R
+
 ```{r}
 idades <-c(14,15,16,14,17)
 idades
 ```
+
+Python
 
 ```{python}
 idades = [14, 15, 16, 14, 17]
@@ -36,9 +40,13 @@ A média é calculada dividindo a soma de todos os números da lista pela quanti
 
 No nosso exemplo se fossemos calcular manualmente a média da lista **idade**, o cálculo seria:
 
+R
+
 ```{r}
 ( 14 + 15 + 16 + 14 + 17 ) / 5
 ```
+
+Python
 
 ```{python}
 print(( 14 + 15 + 16 + 14 + 17 ) / 5)
@@ -46,10 +54,14 @@ print(( 14 + 15 + 16 + 14 + 17 ) / 5)
 
 Porém, utilizar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
 
+R
+
 ```{r}
 idades <- c(14, 15, 16, 14, 17)
 mean(idades)
 ```
+
+Python
 
 ```{python}
 from statistics import mean 
@@ -89,14 +101,14 @@ Um exemplo de **dado categórico**, é uma lista com as cores preferidas dos est
 
 O dado do tipo **categórico binário** é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
 
-O dado do tipo **categórico ordinal** é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente com os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
+O dado do tipo **categórico ordinal** é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
 
-| Variável                                 | Tipo do dado (númerico discreto, numérico contínuo, categórico binário, categório ordinal ou categório) |
-|-----------------------|------------------------------------------------------|
-| Idade (Ex: 14, 17, 23)                   | numérico discreto                                                                                       |
-| Doença (Ausente, Presente)               | categório binário                                                                                       |
-| Story Points (1, 3, 5, 7 ... )           | categorico ordinal                                                                                      |
-| Ano (2021, 2022, ...)                    | numérico discreto                                                                                       |
-| Altura (1,79 - 2,05 - ...)               | numérico contínuo                                                                                       |
-| Estado Civil (Casado, Solteiro)          | categórico binário                                                                                      |
-| Cores preferidas (Azul, verde, vermelho) | categórico                                                                                              |
+| Variável                                 | Tipo do dado       |
+|------------------------------------------|--------------------|
+| Idade (Ex: 14, 17, 23)                   | numérico discreto  |
+| Doença (Ausente, Presente)               | categório binário  |
+| Story Points (1, 3, 5, 7 ... )           | categorico ordinal |
+| Ano (2021, 2022, ...)                    | numérico discreto  |
+| Altura (1,79 - 2,05 - ...)               | numérico contínuo  |
+| Estado Civil (Casado, Solteiro)          | categórico binário |
+| Cores preferidas (Azul, verde, vermelho) | categórico         |

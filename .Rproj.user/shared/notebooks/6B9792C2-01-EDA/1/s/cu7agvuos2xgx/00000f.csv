@@ -1,6 +1,0 @@
-"0","import matplotlib.pyplot as plt"
-"0","plt.plot([0, 1, 2, 3])"
-"1","[<matplotlib.lines.Line2D object at 0x0000017A7073CCB0>]
-"
-"0","plt.show()"
-"0",""

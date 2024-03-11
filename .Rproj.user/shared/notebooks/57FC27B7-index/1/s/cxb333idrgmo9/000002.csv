@@ -1,0 +1,5 @@
+"0","from statistics import mean "
+"0","idades = [14, 15, 16, 14, 17]"
+"0","print(mean(idades))"
+"1","15.2
+"
