@@ -1,6 +1,6 @@
 # Aprenda estatística e análise de dados, com R e Python. 
 
-[On-line](https://giseldo.github.io/estatistica/)
+Link para ler [On-line](https://giseldo.github.io/estatistica/)
 
 ## sobre
 
