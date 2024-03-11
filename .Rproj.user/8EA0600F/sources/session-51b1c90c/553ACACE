@@ -3,7 +3,7 @@
     "path": "C:/Projetos/estatistica/book.bib",
     "project_path": "book.bib",
     "type": "text",
-    "hash": "971757061",
+    "hash": "2020160565",
     "contents": "",
     "dirty": false,
     "created": 1710161370486.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1,24",
+        "cursorPosition": "0,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1710161476,
+    "lastKnownWriteTime": 1710166508,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1710161477004,
+    "last_content_update": 1710166508961,
     "read_only": false,
     "read_only_alternatives": []
 }

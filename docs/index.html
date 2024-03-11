@@ -5,25 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Aprenda Estatística</title>
-  <meta name="description" content="Aprenda Estatística" />
+  <meta name="description" content="Aprenda Estatística com Giseldo Neo" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Aprenda Estatística" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Aprenda Estatística" />
+  <meta property="og:description" content="Aprenda Estatística com Giseldo Neo" />
   <meta name="github-repo" content="giseldo/estatistica" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Aprenda Estatística" />
   
-  <meta name="twitter:description" content="Aprenda Estatística" />
+  <meta name="twitter:description" content="Aprenda Estatística com Giseldo Neo" />
   
 
 <meta name="author" content="Giseldo da Silva Neo" />
 
 
-<meta name="date" content="2024-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,7 +200,6 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Aprenda Estatística</h1>
 <p class="author"><em>Giseldo da Silva Neo</em></p>
-<p class="date"><em>2024-03-11</em></p>
 </div>
 <div id="introdução" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Capítulo 1</span> Introdução<a href="index.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -214,21 +212,24 @@ div.csl-indent {
 <pre><code>## [1] 14 15 16 14 17</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
 <span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a><span class="bu">print</span>(idades)</span></code></pre></div>
+<pre><code>## [14, 15, 16, 14, 17]</code></pre>
 <p>Podemos representar essa lista com um número mais simples, que pode resumir ou representar aquela lista original. Para isso, utilizamos as <strong>estimativas de localização <span class="citation">(<a href="#ref-bruce2020practical">Bruce, Bruce, and Gedeck 2020</a>)</span></strong>. As mais comuns são <strong>média</strong> e <strong>mediana</strong>.</p>
 <div id="média" class="section level3 hasAnchor" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Média<a href="index.html#média" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A média é calculada dividindo a soma de todos os números da lista pela quantidade de itens. Sua fórmula matemática é apresentada em FIGURA XXX. Onde i é a quantidade de itens da lista e <span class="math inline">\(x_i\)</span> é o enésimo item da lista. O termo média também pode ser representado pelo símbolo <span class="math inline">\(X_\)</span></p>
+<p>A média é calculada dividindo a soma de todos os números da lista pela quantidade de itens. Sua fórmula matemática é apresentada em FIGURA XXX. Onde i é a quantidade de itens da lista e <span class="math inline">\(x_i\)</span> é o enésimo item da lista. O termo média também pode ser representado pelo símbolo <span class="math inline">\(X\)</span></p>
 <p>No nosso exemplo se fossemos calcular manualmente a média da lista <strong>idade</strong>, o cálculo seria:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a>( <span class="dv">14</span> <span class="sc">+</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">16</span> <span class="sc">+</span> <span class="dv">14</span> <span class="sc">+</span> <span class="dv">17</span> ) <span class="sc">/</span> <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a>( <span class="dv">14</span> <span class="sc">+</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">16</span> <span class="sc">+</span> <span class="dv">14</span> <span class="sc">+</span> <span class="dv">17</span> ) <span class="sc">/</span> <span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 15.2</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="index.html#cb6-1" tabindex="-1"></a><span class="bu">print</span>(( <span class="dv">14</span> <span class="op">+</span> <span class="dv">15</span> <span class="op">+</span> <span class="dv">16</span> <span class="op">+</span> <span class="dv">14</span> <span class="op">+</span> <span class="dv">17</span> ) <span class="op">/</span> <span class="dv">5</span>)</span></code></pre></div>
-<p>Porém, podemos criar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>)</span>
-<span id="cb7-2"><a href="index.html#cb7-2" tabindex="-1"></a><span class="fu">mean</span>(idades)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a><span class="bu">print</span>(( <span class="dv">14</span> <span class="op">+</span> <span class="dv">15</span> <span class="op">+</span> <span class="dv">16</span> <span class="op">+</span> <span class="dv">14</span> <span class="op">+</span> <span class="dv">17</span> ) <span class="op">/</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## 15.2</code></pre>
+<p>Porém, utilizar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>)</span>
+<span id="cb9-2"><a href="index.html#cb9-2" tabindex="-1"></a><span class="fu">mean</span>(idades)</span></code></pre></div>
 <pre><code>## [1] 15.2</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a><span class="im">from</span> statistics <span class="im">import</span> mean </span>
-<span id="cb9-2"><a href="index.html#cb9-2" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
-<span id="cb9-3"><a href="index.html#cb9-3" tabindex="-1"></a><span class="bu">print</span>(mean(idades))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="im">from</span> statistics <span class="im">import</span> mean </span>
+<span id="cb11-2"><a href="index.html#cb11-2" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
+<span id="cb11-3"><a href="index.html#cb11-3" tabindex="-1"></a><span class="bu">print</span>(mean(idades))</span></code></pre></div>
+<pre><code>## 15.2</code></pre>
 <p>A função <strong>mean,</strong> no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função <strong>mean</strong>, da biblioteca statistics.</p>
 </div>
 </div>
@@ -251,14 +252,14 @@ div.csl-indent {
 <div id="categórico" class="section level3 hasAnchor" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> Categórico<a href="index.html#categórico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Um dado é do tipo <strong>categórico</strong> representa um valor dentro de um conjunto ou de uma categoria.</p>
-<p>O dado <strong>categórico</strong> pode ser binário ou ordinal, ou nenhuma das duas subcategorias.</p>
-<p>Um exemplo de <strong>dado categórico</strong>, é uma lista com as cores preferidas dos estudantes, ou o estado civil de uma pessoa.</p>
+<p>O dado <strong>categórico</strong> pode ser <strong>categótico binário</strong> ou <strong>categórito ordinal</strong>, ou nenhuma das duas subcategorias, ou seja somente <strong>categórico</strong>.</p>
+<p>Um exemplo de <strong>dado categórico</strong>, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).</p>
 <p>O dado do tipo <strong>categórico binário</strong> é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.</p>
-<p>O dado do tipo <strong>categórico ordinal</strong> também é quando o valor do dado faz parte de um conjunto com determinada ordem, por exemplo, imagine a classificação de altura de estudantes onde somente com os valores alto, médio e baixo. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.</p>
+<p>O dado do tipo <strong>categórico ordinal</strong> é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente com os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.</p>
 <table>
 <colgroup>
-<col width="45%" />
-<col width="54%" />
+<col width="29%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -286,6 +287,14 @@ div.csl-indent {
 <tr class="odd">
 <td>Altura (1,79 - 2,05 - …)</td>
 <td>numérico contínuo</td>
+</tr>
+<tr class="even">
+<td>Estado Civil (Casado, Solteiro)</td>
+<td>categórico binário</td>
+</tr>
+<tr class="odd">
+<td>Cores preferidas (Azul, verde, vermelho)</td>
+<td>categórico</td>
 </tr>
 </tbody>
 </table>
