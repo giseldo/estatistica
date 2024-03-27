@@ -1,8 +1,9 @@
 introdução
 estimativas-de-localização
 média
-tipo-do-dado
-numérico
-categórico
+tipo-do-dado-ou-caracterização-dos-dados---númerico-categórico
+numérico-ou-quantitativo
+categórico-ou-qualitativo
+tipo-do-atributo-preditor-alvo
 análise-exploratória-dos-dados
 introdução-1

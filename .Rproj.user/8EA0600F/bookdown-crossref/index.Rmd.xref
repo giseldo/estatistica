@@ -1,7 +1,8 @@
 h1:introdução Introdução
 h2:estimativas-de-localização Estimativas de localização
 h3:média Média
-h2:tipo-do-dado Tipo do Dado
-h3:numérico Numérico
-h3:categórico Categórico
+h2:tipo-do-dado-ou-caracterização-dos-dados---númerico-categórico Tipo do Dado (ou caracterização dos dados - númerico, categórico)
+h3:numérico-ou-quantitativo Numérico (ou quantitativo)
+h3:categórico-ou-qualitativo Categórico (ou qualitativo)
+h2:tipo-do-atributo-preditor-alvo Tipo do Atributo (Preditor, Alvo)
 

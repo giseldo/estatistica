@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -127,6 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -167,11 +168,12 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#média"><i class="fa fa-check"></i><b>1.1.1</b> Média</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tipo-do-dado"><i class="fa fa-check"></i><b>1.2</b> Tipo do Dado</a>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tipo-do-dado-ou-caracterização-dos-dados---númerico-categórico"><i class="fa fa-check"></i><b>1.2</b> Tipo do Dado (ou caracterização dos dados - númerico, categórico)</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#numérico"><i class="fa fa-check"></i><b>1.2.1</b> Numérico</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#categórico"><i class="fa fa-check"></i><b>1.2.2</b> Categórico</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#numérico-ou-quantitativo"><i class="fa fa-check"></i><b>1.2.1</b> Numérico (ou quantitativo)</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#categórico-ou-qualitativo"><i class="fa fa-check"></i><b>1.2.2</b> Categórico (ou qualitativo)</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#tipo-do-atributo-preditor-alvo"><i class="fa fa-check"></i><b>1.3</b> Tipo do Atributo (Preditor, Alvo)</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="análise-exploratória-dos-dados.html"><a href="análise-exploratória-dos-dados.html"><i class="fa fa-check"></i><b>2</b> Análise exploratória dos dados</a>
 <ul>
@@ -207,11 +209,11 @@ div.csl-indent {
 <div id="estimativas-de-localização" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Estimativas de localização<a href="index.html#estimativas-de-localização" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.</p>
-<p>R</p>
+<p>Código R</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a>idades <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">14</span>,<span class="dv">17</span>)</span>
 <span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a>idades</span></code></pre></div>
 <pre><code>## [1] 14 15 16 14 17</code></pre>
-<p>Python</p>
+<p>Código Python</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
 <span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a><span class="bu">print</span>(idades)</span></code></pre></div>
 <pre><code>## [14, 15, 16, 14, 17]</code></pre>
@@ -220,49 +222,53 @@ div.csl-indent {
 <h3><span class="header-section-number">1.1.1</span> Média<a href="index.html#média" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A média é calculada dividindo a soma de todos os números da lista pela quantidade de itens. Sua fórmula matemática é apresentada em FIGURA XXX. Onde i é a quantidade de itens da lista e <span class="math inline">\(x_i\)</span> é o enésimo item da lista. O termo média também pode ser representado pelo símbolo <span class="math inline">\(X\)</span></p>
 <p>No nosso exemplo se fossemos calcular manualmente a média da lista <strong>idade</strong>, o cálculo seria:</p>
-<p>R</p>
+<p>Código R</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a>( <span class="dv">14</span> <span class="sc">+</span> <span class="dv">15</span> <span class="sc">+</span> <span class="dv">16</span> <span class="sc">+</span> <span class="dv">14</span> <span class="sc">+</span> <span class="dv">17</span> ) <span class="sc">/</span> <span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 15.2</code></pre>
-<p>Python</p>
+<p>Código Python</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a><span class="bu">print</span>(( <span class="dv">14</span> <span class="op">+</span> <span class="dv">15</span> <span class="op">+</span> <span class="dv">16</span> <span class="op">+</span> <span class="dv">14</span> <span class="op">+</span> <span class="dv">17</span> ) <span class="op">/</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## 15.2</code></pre>
-<p>Porém, utilizar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:</p>
-<p>R</p>
+<p>Porém, podemos utilizar algumas funções que já disponibilizam esse recurso de calular a média. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:</p>
+<p>Código R</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>)</span>
 <span id="cb9-2"><a href="index.html#cb9-2" tabindex="-1"></a><span class="fu">mean</span>(idades)</span></code></pre></div>
 <pre><code>## [1] 15.2</code></pre>
-<p>Python</p>
+<p>Código Python</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="im">from</span> statistics <span class="im">import</span> mean </span>
 <span id="cb11-2"><a href="index.html#cb11-2" tabindex="-1"></a>idades <span class="op">=</span> [<span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">17</span>]</span>
 <span id="cb11-3"><a href="index.html#cb11-3" tabindex="-1"></a><span class="bu">print</span>(mean(idades))</span></code></pre></div>
 <pre><code>## 15.2</code></pre>
-<p>A função <strong>mean,</strong> no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função <strong>mean</strong>, da biblioteca statistics.</p>
+<p>A função <strong>mean,</strong> no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função mesmo nome, porém disponível na biblioteca statistics do python.</p>
 </div>
 </div>
-<div id="tipo-do-dado" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Tipo do Dado<a href="index.html#tipo-do-dado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>É necessário classificar o tipo do dado (também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões necessárias.</p>
-<p>O tipo do dado pode ser <strong>numérico</strong> ou <strong>categórico</strong>, ou seja ele pode ser classificado como um dado númerico ou categórico, ou um ou outro.</p>
+<div id="tipo-do-dado-ou-caracterização-dos-dados---númerico-categórico" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Tipo do Dado (ou caracterização dos dados - númerico, categórico)<a href="index.html#tipo-do-dado-ou-caracterização-dos-dados---númerico-categórico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>É necessário classificar o tipo do dado (também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos e de determinadas formas. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões ou tratamentos adicionais que forem necessários.</p>
+<p>O tipo do dado pode ser <strong>numérico</strong>, <strong>categórico</strong>, texto ou data. Vide figura abaixo. Dados do tipo numérico e categórico, que são os comumente utilizados em estatistica e aprendizagem de máquina serão melhor detalhados nas seções seguintes.</p>
 <div class="float">
 <img src="figuras/tipo_dado.png" width="254" alt="Tipo do dado" />
 <div class="figcaption">Tipo do dado</div>
 </div>
-<p>Dado do tipo <strong>numérico</strong> é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados categóricos. Já o dado do tipo <strong>categórico</strong> está relacionado a um valor dentro de um lista de valores. A formação acadêmcia, por exemplo, é um dado do tipo <strong>categórico</strong>. Já o salário, é um dado to tipo <strong>númerico</strong>.</p>
-<div id="numérico" class="section level3 hasAnchor" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Numérico<a href="index.html#numérico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>O tipo do dado <strong>numérico</strong> ainda pode ser <strong>numério</strong> <strong>contínuo</strong> ou <strong>númerico</strong> <strong>discreto</strong>.</p>
+<p>Dado do tipo <strong>numérico</strong> é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados <strong>categóricos</strong>. Já o dado do tipo <strong>categórico</strong> está relacionado a um valor dentro de um lista (geralmente finita) de valores. A formação acadêmcia de uma determinada pessoa (Ensino Fundamental, Médio ou Superior), por exemplo, é um dado do tipo <strong>categórico</strong>. Já o salário, é um dado to tipo <strong>númerico</strong>.</p>
+<div id="numérico-ou-quantitativo" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Numérico (ou quantitativo)<a href="index.html#numérico-ou-quantitativo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>O tipo do dado <strong>numérico</strong> ainda pode ser sub classificado como <strong>numério</strong> <strong>contínuo</strong> ou <strong>númerico</strong> <strong>discreto</strong>.</p>
 <p>Um dado <strong>numérico</strong> <strong>contínuo</strong> é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura dos estudantes é um dado do tipo <strong>numérico</strong> <strong>contínuo</strong>.</p>
 <p>O dado <strong>numérico discreto</strong> geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade é uma contagem de anos do estudante, é um dado <strong>numérico discreto</strong>.</p>
 <p>Na nossa lista de idades, a idade é um dado do estudante do tipo <strong>numérico discreto</strong>.</p>
 </div>
-<div id="categórico" class="section level3 hasAnchor" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Categórico<a href="index.html#categórico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="categórico-ou-qualitativo" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Categórico (ou qualitativo)<a href="index.html#categórico-ou-qualitativo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Um dado é do tipo <strong>categórico</strong> representa um valor dentro de um conjunto ou de uma categoria.</p>
-<p>O dado <strong>categórico</strong> pode ser <strong>categótico binário</strong> ou <strong>categórito ordinal</strong>, ou nenhuma das duas subcategorias, ou seja somente <strong>categórico</strong>.</p>
-<p>Um exemplo de <strong>dado categórico</strong>, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).</p>
-<p>O dado do tipo <strong>categórico binário</strong> é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.</p>
-<p>O dado do tipo <strong>categórico ordinal</strong> é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.</p>
+<p>O dado <strong>categórico</strong> pode ser <strong>categótico binário</strong> ou <strong>categórito ordinal</strong>, ou nenhuma das duas subcategorias, ou seja <strong>categórico somente</strong>.</p>
+<p>Um exemplo de <strong>dado categórico somente</strong>, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).</p>
+<p>O dado do tipo <strong>categórico binário</strong> é quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.</p>
+<p>O dado do tipo <strong>categórico ordinal</strong> é quando o valor é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo, existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.</p>
 <table>
+<colgroup>
+<col width="47%" />
+<col width="52%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variável</th>
@@ -296,16 +302,98 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>Cores preferidas (Azul, verde, vermelho)</td>
-<td>categórico</td>
+<td>categórico somente (nem binário, nem ordinal)</td>
 </tr>
 </tbody>
 </table>
+<p>Os dados geralmente são organizados em formato de tabelas. Onde as linhas representam as obseravações (ou instâncias) e as colunas representam as variáveis.</p>
+<p>Vamos utilizar o exemplo de uma empresa que desenvolve software e registra os dados relacionados a seus projetos. Essa empresa mantem o registro de determinada funcionalidade e do tamanho dessa funcionalidade. Cada linha da tabela representa uma funcionalidade (chamada de User Story em projetos que utilizam SCRUM). Cada coluna representa uma informação dessa User Story. As informações que a empresa mantém registro são as variáveis, as colunas da tabela. Uma dessas variáveis é a descriçao, outra é uma estimativa que o desenvolvedor atribui do tamanho funional, chamado Story Point. Essas informações estão dispostas em um arquivo no formato CSV. O código abaixo, carrega esse arquivo e exibe parte de seu conteúdo. Iremos então classificar cada uma das colunas de acordo com o tipo do dado.</p>
+<p>Código R</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/neodataset/7764.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## Rows: 355 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): title, description
+## dbl  (2): issuekey, storypoints
+## dttm (1): created
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   issuekey created             title                     description storypoints
+##      &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;
+## 1 29688087 2020-01-17 00:50:48 Update templates for web… &quot;Relates t…           1
+## 2 29682716 2020-01-16 19:21:38 Make sure that we Captur… &quot;This was …           1
+## 3 29644971 2020-01-15 21:17:03 Propose new IA for Brand… &quot;## Goals\…           1
+## 4 29494181 2020-01-10 19:20:50 Cache `node_modules` for… &quot;# UPDATE …           1
+## 5 29437529 2020-01-09 10:26:51 Disable all remaining un… &quot;Similar t…           1
+## 6 29358963 2020-01-07 08:35:44 Disable unnecessary jobs… &quot;As discus…           1</code></pre>
+<p>Código Python</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-2"><a href="index.html#cb17-2" tabindex="-1"></a><span class="co">#pd.set_option(&#39;max_columns&#39;, None)</span></span>
+<span id="cb17-3"><a href="index.html#cb17-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/neodataset/7764.csv&#39;</span>)</span>
+<span id="cb17-4"><a href="index.html#cb17-4" tabindex="-1"></a>df.head()</span></code></pre></div>
+<pre><code>##    issuekey  ... storypoints
+## 0  29688087  ...           1
+## 1  29682716  ...           1
+## 2  29644971  ...           1
+## 3  29494181  ...           1
+## 4  29437529  ...           1
+## 
+## [5 rows x 5 columns]</code></pre>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="13%" />
+<col width="75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nome da Coluna</th>
+<th>Tipo do dado</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Issuekey</td>
+<td>categorico somente</td>
+<td>Apesar de ser um número, não são realizadas operações no número, ele é um identificador único da User Story</td>
+</tr>
+<tr class="even">
+<td>stroypoints</td>
+<td>numérico discreto</td>
+<td>É um número geralmente de 1 á 100</td>
+</tr>
+<tr class="odd">
+<td>created</td>
+<td>data</td>
+<td>Data em que a User Story Foi criada</td>
+</tr>
+<tr class="even">
+<td>title</td>
+<td>texto</td>
+<td>Título da User Story</td>
+</tr>
+<tr class="odd">
+<td>description</td>
+<td>texto</td>
+<td>Desrição da User Story</td>
+</tr>
+</tbody>
+</table>
+<p>A tabela acima apresenta a caracterização dos dados do conjunto de dados neodataset (esse conjunto de dados pode ser baixado em …). Nessa tabela foram tipificados os dados. É interessante apresentar essa tipificação em estudos cientificos e trabalhos de conclusão de curso, quando estamos lidando com conjuntos de dados. Cabe ressaltar que essa tipificação independe da linguagem. Internamente cada linguagem de programação tem seus tipos especificos e que podem ter pequenas diferenças entre as linguagens.</p>
+</div>
+</div>
+<div id="tipo-do-atributo-preditor-alvo" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Tipo do Atributo (Preditor, Alvo)<a href="index.html#tipo-do-atributo-preditor-alvo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nos modelos de aprendizagem de máquina (quando lidamos com algoritmos classificados como supervisionados) e de inferência estatistica o dado também pode ser classificado entre atributo preditor ou atributo alvo. Atributo preditor, são os atributos que serão utilizados para realizar a previsão, geralmente um ou mais atributos. Atributo alvo é o atributo que queremos ‘advinhar (ou dar o melhor chute técnico)’ com os modelos preditivos. Atributo preditor muitas vezes é chamado de vairável independente, e atributo alvo de variável dependente.</p>
 
 </div>
 </div>
-</div>
 <h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-bruce2020practical" class="csl-entry">
 Bruce, Peter, Andrew Bruce, and Peter Gedeck. 2020. <em>Practical Statistics for Data Scientists: 50+ Essential Concepts Using r and Python</em>. O’Reilly Media.
 </div>
