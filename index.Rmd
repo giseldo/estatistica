@@ -10,9 +10,63 @@ link-citations: yes
 github-repo: giseldo/estatistica
 ---
 
+# Préfacil
+
+A Harvard Business Review, revista conceituada em administração e negócios, em uma matéria de opinião, afirmou no título que este é um dos empregos mais sexy deste século 21 e exemplificou o conceito do que é um ser um cientista de dados [@hbr2012]. Porém, acredito que outras pessoas podem ter visões diferentes do que é um emprego sexy, como por exemplo Joel Grus (2016) [@grus2016], que acredita que a matéria da Harvard Business foi escrito por alguém que nunca visitou um quartel do corpo de bombeiros. Particularmente, a escolha do que é ser sexy foge do escopo desse livro e me parece uma questão de gosto. Porém o consenso é que o campo está em alta e em evidência.
+
 # Introdução
 
-É importante começarmos pelos conceitos básicos para criar um vocabulário consistente e permitir uma comunicação clara entre os interessados em discutir e aprender estatística e análise de dados. Estatística e análise de dados é uma habilidade crucial no processo de extração de informação para tomada de decisão. A quantidade de dados disponível para consulta vem crescendo exponencialmente e analisar estes dados tem sido útil para diversas organizações.
+Acho importante começar pelos conceitos básicos para criar um vocabulário consistente para permitir uma comunicação clara entre os interessados em discutir e aprender estatística, análise de dados, ciência de dados e outras denominações dessa nova competência. A quantidade de dados disponível vem crescendo exponencialmente e analisá-los tem sido útil para diversas organizações. Logo, a habilidade em lidar com esses dados é crucial para o profissional que deseja extrair informação útil.
+
+## Dado e Informação
+
+Dado e informação nesse contexto são coisas diferentes. Nas análises preditivas, que será explicado mais adiante, as informações são extradas partir dos dados. Entendemos os dados como fatos brutos. Por exemplo, o nome de um estudante e o número do CPF são exemplos de dados.
+
+Informação é quando utilizamos os dados aplicados em um contexto. Por exemplo, os dados do nome e do CPF de um estudante podem fazer parte de uma lista de alunos matriculados em um curso técnico de informática de um Instituto Federal.
+
+## Tipo do Dado
+
+Vamos classificar o dado em algumas categorias que nos permitirão comunicar melhor nas próximas seções, essas classificações facilitarão a nossa comunicação.
+
+(também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões necessárias.
+
+O tipo do dado pode ser **numérico** ou **categórico**, ou seja ele pode ser classificado como um dado númerico ou categórico, ou um ou outro.
+
+![Tipo do dado](figuras/tipo_dado.png){width="254"}
+
+Dado do tipo **numérico** é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados categóricos. Já o dado do tipo **categórico** está relacionado a um valor dentro de um lista de valores. A formação acadêmcia, por exemplo, é um dado do tipo **categórico**. Já o salário, é um dado to tipo **númerico**.
+
+### Numérico
+
+O tipo do dado **numérico** ainda pode ser **numério** **contínuo** ou **númerico** **discreto**.
+
+Um dado **numérico** **contínuo** é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura dos estudantes é um dado do tipo **numérico** **contínuo**.
+
+O dado **numérico discreto** geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade é uma contagem de anos do estudante, é um dado **numérico discreto**.
+
+Na nossa lista de idades, a idade é um dado do estudante do tipo **numérico discreto**.
+
+### Categórico
+
+Um dado é do tipo **categórico** representa um valor dentro de um conjunto ou de uma categoria.
+
+O dado **categórico** pode ser **categótico binário** ou **categórito ordinal**, ou nenhuma das duas subcategorias, ou seja somente **categórico**.
+
+Um exemplo de **dado categórico**, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).
+
+O dado do tipo **categórico binário** é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
+
+O dado do tipo **categórico ordinal** é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
+
+| Variável                                 | Tipo do dado       |
+|------------------------------------------|--------------------|
+| Idade (Ex: 14, 17, 23)                   | numérico discreto  |
+| Doença (Ausente, Presente)               | categório binário  |
+| Story Points (1, 3, 5, 7 ... )           | categorico ordinal |
+| Ano (2021, 2022, ...)                    | numérico discreto  |
+| Altura (1,79 - 2,05 - ...)               | numérico contínuo  |
+| Estado Civil (Casado, Solteiro)          | categórico binário |
+| Cores preferidas (Azul, verde, vermelho) | categórico         |
 
 ## Estimativas de localização
 
@@ -70,45 +124,3 @@ print(mean(idades))
 ```
 
 A função **mean,** no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função **mean**, da biblioteca statistics.
-
-## Tipo do Dado
-
-É necessário classificar o tipo do dado (também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões necessárias.
-
-O tipo do dado pode ser **numérico** ou **categórico**, ou seja ele pode ser classificado como um dado númerico ou categórico, ou um ou outro.
-
-![Tipo do dado](figuras/tipo_dado.png){width="254"}
-
-Dado do tipo **numérico** é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados categóricos. Já o dado do tipo **categórico** está relacionado a um valor dentro de um lista de valores. A formação acadêmcia, por exemplo, é um dado do tipo **categórico**. Já o salário, é um dado to tipo **númerico**.
-
-### Numérico
-
-O tipo do dado **numérico** ainda pode ser **numério** **contínuo** ou **númerico** **discreto**.
-
-Um dado **numérico** **contínuo** é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura dos estudantes é um dado do tipo **numérico** **contínuo**.
-
-O dado **numérico discreto** geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade é uma contagem de anos do estudante, é um dado **numérico discreto**.
-
-Na nossa lista de idades, a idade é um dado do estudante do tipo **numérico discreto**.
-
-### Categórico
-
-Um dado é do tipo **categórico** representa um valor dentro de um conjunto ou de uma categoria.
-
-O dado **categórico** pode ser **categótico binário** ou **categórito ordinal**, ou nenhuma das duas subcategorias, ou seja somente **categórico**.
-
-Um exemplo de **dado categórico**, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).
-
-O dado do tipo **categórico binário** é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
-
-O dado do tipo **categórico ordinal** é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
-
-| Variável                                 | Tipo do dado       |
-|------------------------------------------|--------------------|
-| Idade (Ex: 14, 17, 23)                   | numérico discreto  |
-| Doença (Ausente, Presente)               | categório binário  |
-| Story Points (1, 3, 5, 7 ... )           | categorico ordinal |
-| Ano (2021, 2022, ...)                    | numérico discreto  |
-| Altura (1,79 - 2,05 - ...)               | numérico contínuo  |
-| Estado Civil (Casado, Solteiro)          | categórico binário |
-| Cores preferidas (Azul, verde, vermelho) | categórico         |
