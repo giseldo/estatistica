@@ -1,8 +1,14 @@
+prefácil
 introdução
+dado-e-informação
+classificação-do-dado
+quanto-ao-tipo-do-dado
+dado-do-tipo-numérico-ou-quantitativo
+dado-do-tipo-categórico-ou-qualitativo
+exemplos-de-tipo-do-dado
+tabelas
+tipo-do-dado-atributo-preditor-alvo
 estimativas-de-localização
 média
-tipo-do-dado
-numérico
-categórico
 análise-exploratória-dos-dados
 introdução-1

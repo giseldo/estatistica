@@ -129,21 +129,225 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.4     v readr     2.1.5
+## v forcats   1.0.0     v stringr   1.5.1
+## v ggplot2   3.5.0     v tibble    3.2.1
+## v lubridate 1.9.3     v tidyr     1.3.1
+## v purrr     1.0.2     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\hypertarget{prefuxe1cil}{%
+\chapter{Prefácil}\label{prefuxe1cil}}
+
+A Harvard Business Review, revista conceituada em administração e negócios, em uma matéria de opinião, afirmou no título que este é um dos empregos mais sexy deste século 21 e exemplificou o conceito do que é um ser um cientista de dados \citep{hbr2012}. Porém, acredito que outras pessoas podem ter visões diferentes do que é um emprego sexy, como por exemplo Joel Grus (2016) \citep{grus2016}, que acredita que a matéria da Harvard Business foi escrito por alguém que nunca visitou um quartel do corpo de bombeiros. Particularmente, a escolha do que é ser sexy foge do escopo desse \textbf{livro} e me parece uma questão pessoal. Porém, o consenso é que o campo está em alta e em evidência.
+
+A quantidade de dados disponível vem crescendo exponencialmente e analisá-los tem sido útil para diversas organizações e para a sociedade como um todo. Muitas pesquisas estão sendo escritas sobre esse tema, com a descrição de experimentos e com achados importantes. Logo, a habilidade em lidar com esses dados e reportá-los é crucial para o profissional que deseja extrair informação útil e construir conhecimento. Este livro visa preencher esta lacuna e dar ao leitor uma visão prática e teórica com exemplos de programação em R e em Python.
+
 \hypertarget{introduuxe7uxe3o}{%
 \chapter{Introdução}\label{introduuxe7uxe3o}}
 
-Acho importante começar pelos conceitos básicos para criar um vocabulário consistente e permitir uma comunicação clara entre os interessados em discutir e aprender estatística, análise de dados, ciência de dados e outras denominações dessa nova competência. A quantidade de dados disponível vem crescendo exponencialmente e analisá-los tem sido útil para diversas organizações. Logo, a habilidade em lidar com esses dados é crucial para o profissional que deseja extrair informação útil.
+Vamos começar pelos conceitos básicos e criar um vocabulário consistente para permitir uma comunicação mais clara nas seções futuras.
 
-A Harvard Business Review, revista conceituada em administração e negócios, em uma matéria de opinião afirmou no título que este é um dos empregos mais sexy deste século 21 e exemplificou o conceito do que é um ser um cientista de dados \citep{hbr2012}. Porém, acredito que outras pessoas podem ter visões diferentes do que é um emprego sexy, como por exemplo Joel Grus (2016) \citep{grus2016}, que acredita que a matéria da Harvard Business foi escrito por alguém que nunca visitou um quartel do corpo de bombeiros. Particularmente, a escolha do que é ser sexy foge do escopo desse livro e me parece uma questão de gosto. Mas concordo com Joel quando ele diz que o campo está em alta e evidência.
+\hypertarget{dado-e-informauxe7uxe3o}{%
+\section{Dado e Informação}\label{dado-e-informauxe7uxe3o}}
 
-Nas análises preditivas são extraídas informações a partir dos dados. Entendemos os dados como fatos brutos, como por exemplo, o nome de um estudante e o número do CPF.
+Dado e informação nesse contexto são coisas diferentes. Nas análises preditivas, que será explicado mais adiante, as informações são extradas a partir dos dados. Neste contexto os dados são os fatos brutos. Por exemplo, o nome de um estudante e o número do CPF são exemplos de dados.
+
+Informação é quando utilizamos os dados aplicados em um contexto. Por exemplo, os dados do nome e do CPF de um estudante podem fazer parte de uma lista de alunos matriculados em um curso técnico de informática de um Instituto Federal.
+
+\hypertarget{classificauxe7uxe3o-do-dado}{%
+\section{Classificação do Dado}\label{classificauxe7uxe3o-do-dado}}
+
+Vamos classificar o dado em algumas categorias que nos permitirão uma comunicação, mais consistente, com menos redundância. Essas classificações facilitarão a nossa comunicação em assuntos mais avaçados.
+
+\hypertarget{quanto-ao-tipo-do-dado}{%
+\subsection{Quanto ao tipo do dado}\label{quanto-ao-tipo-do-dado}}
+
+É necessário classificar o dado quanto ao seu tipo pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos de inferência (termos que serão explicados mais a frente), irão funcionar com determinados tipos de determinadas formas. Logo, com o conhecimento da classificação do tipo do dado poderemos realizar, ou não, as conversões ou tratamentos adicionais que forem necessários.
+
+O tipo do dado pode ser: \textbf{numérico} (também chamado de quantitativo), \textbf{categórico} (também chamado de qualitativo). Ou se enquadram na categoria \textbf{Especial} (entre eles dados do tipo \textbf{texto} e dados do tipo \textbf{data}) Vide figura abaixo.
+
+\begin{figure}
+\centering
+\includegraphics[width=5.16667in,height=\textheight]{figuras/tipo_dado.png}
+\caption{Tipo do dado}
+\end{figure}
+
+Um dado do tipo \textbf{numérico} é expresso geralmente como um número real. Porém, existem casos em que números inteiros também expressam dados do tipo \textbf{categóricos,} portanto não é só ter número que já podemos classificá-lo como numérico. Já o dado do tipo \textbf{categórico} está relacionado a um valor dentro de um lista (geralmente finita - porém nem sempre) de valores. A formação acadêmica de uma determinada pessoa (Ensino Fundamental, Médio ou Superior), por exemplo, é um dado do tipo \textbf{categórico}. Já o salário, é um dado to tipo \textbf{númerico}.
+
+Dados do tipo \textbf{numérico} e \textbf{categórico} são comumente utilizados em estatística inferencial e aprendizagem de máquina e serão detalhados nas seções seguintes.
+
+\hypertarget{dado-do-tipo-numuxe9rico-ou-quantitativo}{%
+\subsubsection{Dado do tipo numérico (ou quantitativo)}\label{dado-do-tipo-numuxe9rico-ou-quantitativo}}
+
+O tipo do dado \textbf{numérico}, também chamado de quantitativo, ainda pode ser sub classificado como \textbf{numério} \textbf{contínuo} ou \textbf{númerico} \textbf{discreto}.
+
+Um dado \textbf{numérico} \textbf{contínuo} é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura de um estudante (por exemplo 1,80 metros) é um dado do tipo \textbf{numérico} \textbf{contínuo}.
+
+O dado \textbf{numérico discreto} geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade de um estudante (42 anos) é uma contagem, é um dado \textbf{numérico discreto}.
+
+\hypertarget{dado-do-tipo-categuxf3rico-ou-qualitativo}{%
+\subsubsection{Dado do tipo categórico (ou qualitativo)}\label{dado-do-tipo-categuxf3rico-ou-qualitativo}}
+
+Um dado é do tipo \textbf{categórico} quando representa um valor dentro de um conjunto ou de uma categoria.
+
+O dado \textbf{categórico} pode ser \textbf{categótico binário} ou \textbf{categórito ordinal}, ou nenhuma das duas subcategorias, ou seja \textbf{categórico somente}.
+
+Um exemplo de \textbf{dado categórico somente}, é a cor preferida por uma pessoa (por exemplo eu prefiro a cor azul), ou o estado civil de uma pessoa (no meu caso casado).
+
+O dado do tipo \textbf{categórico binário} é quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo, 0 ou 1, existente ou ausente, true ou false, sim e não, aprovado ou reprovado.
+
+O dado do tipo \textbf{categórico ordinal} é quando o valor é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação dos seres humanos entre criança, jovem e adulto. Nesse exemplo, existe uma ordem temporal, o jovem já foi uma criança, o adulto já foi um jovem.
+
+\hypertarget{exemplos-de-tipo-do-dado}{%
+\subsubsection{Exemplos de tipo do dado}\label{exemplos-de-tipo-do-dado}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4722}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5278}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Variável
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo do dado
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Idade (14, 17, 23) & numérico discreto \\
+Doença (Ausente, Presente) & categório binário \\
+Story Points (1, 3, 5, 7 \ldots{} ) & categorico ordinal \\
+Ano (2021, 2022, \ldots) & numérico discreto \\
+Altura (1,79 - 2,05 - \ldots) & numérico contínuo \\
+Estado Civil (Casado, Solteiro) & categórico binário \\
+Cores preferidas (Azul, verde, vermelho) & categórico somente (nem binário, nem ordinal) \\
+\end{longtable}
+
+\hypertarget{tabelas}{%
+\subsubsection{Tabelas}\label{tabelas}}
+
+Os dados geralmente são organizados em formato de tabelas. Onde as linhas representam as obseravações (ou instâncias) e as colunas representam as variáveis.
+
+Vamos utilizar o exemplo de uma empresa que desenvolve software e registra os dados relacionados a seus projetos. Essa empresa mantem o registro de determinada funcionalidade e do tamanho dessa funcionalidade. Cada linha da tabela representa uma funcionalidade (chamada de User Story em projetos que utilizam SCRUM). Cada coluna representa uma informação dessa User Story. As informações que a empresa mantém registro são as variáveis, as colunas da tabela. Uma dessas variáveis é a descriçao, outra é uma estimativa que o desenvolvedor atribui do tamanho funional, chamado Story Point. Essas informações estão dispostas em um arquivo no formato CSV. O código abaixo, carrega esse arquivo e exibe parte de seu conteúdo. Iremos então classificar cada uma das colunas de acordo com o tipo do dado.
+
+Código R
+
+\begin{verbatim}
+## Rows: 355 Columns: 5
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr  (2): title, description
+## dbl  (2): issuekey, storypoints
+## dttm (1): created
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+##   issuekey created             title                     description storypoints
+##      <dbl> <dttm>              <chr>                     <chr>             <dbl>
+## 1 29688087 2020-01-17 00:50:48 Update templates for web~ "Relates t~           1
+## 2 29682716 2020-01-16 19:21:38 Make sure that we Captur~ "This was ~           1
+## 3 29644971 2020-01-15 21:17:03 Propose new IA for Brand~ "## Goals\~           1
+## 4 29494181 2020-01-10 19:20:50 Cache `node_modules` for~ "# UPDATE ~           1
+## 5 29437529 2020-01-09 10:26:51 Disable all remaining un~ "Similar t~           1
+## 6 29358963 2020-01-07 08:35:44 Disable unnecessary jobs~ "As discus~           1
+\end{verbatim}
+
+Código Python
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\CommentTok{\#pd.set\_option(\textquotesingle{}max\_columns\textquotesingle{}, None)}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}data/neodataset/7764.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    issuekey  ... storypoints
+## 0  29688087  ...           1
+## 1  29682716  ...           1
+## 2  29644971  ...           1
+## 3  29494181  ...           1
+## 4  29437529  ...           1
+## 
+## [5 rows x 5 columns]
+\end{verbatim}
+
+A tabela abaixo não é um exemplo dos dados é a classificação, note que o que era antes coluna virou linha.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2329}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2329}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5342}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Nome da Coluna
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo do dado
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Observação
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Issuekey & categorico somente & Apesar de ser um número, não são realizadas operações no número, ele é um identificador único da User Story \\
+storypoints & numérico discreto & É um número geralmente de 1 á 100 \\
+created & data & Data em que a User Story Foi criada \\
+title & texto & Título da User Story \\
+description & texto & Desrição da User Story \\
+\end{longtable}
+
+A tabela acima apresenta a caracterização dos dados do conjunto de dados neodataset (esse conjunto de dados pode ser baixado em \ldots). Nessa tabela foram tipificados os dados. É interessante apresentar essa tipificação em estudos cientificos e trabalhos de conclusão de curso, quando estamos lidando com conjuntos de dados. Cabe ressaltar que essa tipificação independe da linguagem. Internamente cada linguagem de programação tem seus tipos especificos e que podem ter pequenas diferenças entre as linguagens.
+
+\hypertarget{tipo-do-dado-atributo-preditor-alvo}{%
+\subsubsection{Tipo do dado / atributo (Preditor, Alvo)}\label{tipo-do-dado-atributo-preditor-alvo}}
+
+Nos modelos de aprendizagem de máquina (quando lidamos com algoritmos classificados como supervisionados) e de inferência estatistica o dado também pode ser classificado entre atributo preditor ou atributo alvo. Atributo preditor, são os atributos que serão utilizados para realizar a previsão, geralmente um ou mais atributos. Atributo alvo é o atributo que queremos `advinhar (ou dar o melhor chute técnico)' com os modelos preditivos. Atributo preditor muitas vezes é chamado de vairável independente, e atributo alvo de variável dependente.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3889}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3611}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Col1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo do dado (numerico ou categorico)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tipo do atributo (preditor ou alvo)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+IssueKey & categorigo somente & - \\
+StoryPoint & numerico discreto & alvo \\
+Created & data & - \\
+Title & texto & preditor \\
+Desription & texto & preditor \\
+\end{longtable}
+
+Ou seja, no modelo proposto, o título e a descrição serão os atributos preditores do atributo alvo, espera-se que os dados do título e da descrição contenham as informações necessárias para a estimativa em Story Points.
 
 \hypertarget{estimativas-de-localizauxe7uxe3o}{%
 \section{Estimativas de localização}\label{estimativas-de-localizauxe7uxe3o}}
 
 Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.
 
-R
+Código R
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -156,7 +360,7 @@ R
 ## [1] 14 15 16 14 17
 \end{verbatim}
 
-Python
+Código Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -178,7 +382,7 @@ A média é calculada dividindo a soma de todos os números da lista pela quanti
 
 No nosso exemplo se fossemos calcular manualmente a média da lista \textbf{idade}, o cálculo seria:
 
-R
+Código R
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -190,7 +394,7 @@ R
 ## [1] 15.2
 \end{verbatim}
 
-Python
+Código Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -202,9 +406,9 @@ Python
 ## 15.2
 \end{verbatim}
 
-Porém, utilizar algumas funções que já disponibilizam esse recurso. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
+Porém, podemos utilizar algumas funções que já disponibilizam esse recurso de calular a média. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
 
-R
+Código R
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -217,7 +421,7 @@ R
 ## [1] 15.2
 \end{verbatim}
 
-Python
+Código Python
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -231,62 +435,7 @@ Python
 ## 15.2
 \end{verbatim}
 
-A função \textbf{mean,} no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função \textbf{mean}, da biblioteca statistics.
-
-\hypertarget{tipo-do-dado}{%
-\section{Tipo do Dado}\label{tipo-do-dado}}
-
-É necessário classificar o tipo do dado (também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões necessárias.
-
-O tipo do dado pode ser \textbf{numérico} ou \textbf{categórico}, ou seja ele pode ser classificado como um dado númerico ou categórico, ou um ou outro.
-
-\begin{figure}
-\centering
-\includegraphics[width=2.64583in,height=\textheight]{figuras/tipo_dado.png}
-\caption{Tipo do dado}
-\end{figure}
-
-Dado do tipo \textbf{numérico} é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados categóricos. Já o dado do tipo \textbf{categórico} está relacionado a um valor dentro de um lista de valores. A formação acadêmcia, por exemplo, é um dado do tipo \textbf{categórico}. Já o salário, é um dado to tipo \textbf{númerico}.
-
-\hypertarget{numuxe9rico}{%
-\subsection{Numérico}\label{numuxe9rico}}
-
-O tipo do dado \textbf{numérico} ainda pode ser \textbf{numério} \textbf{contínuo} ou \textbf{númerico} \textbf{discreto}.
-
-Um dado \textbf{numérico} \textbf{contínuo} é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura dos estudantes é um dado do tipo \textbf{numérico} \textbf{contínuo}.
-
-O dado \textbf{numérico discreto} geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade é uma contagem de anos do estudante, é um dado \textbf{numérico discreto}.
-
-Na nossa lista de idades, a idade é um dado do estudante do tipo \textbf{numérico discreto}.
-
-\hypertarget{categuxf3rico}{%
-\subsection{Categórico}\label{categuxf3rico}}
-
-Um dado é do tipo \textbf{categórico} representa um valor dentro de um conjunto ou de uma categoria.
-
-O dado \textbf{categórico} pode ser \textbf{categótico binário} ou \textbf{categórito ordinal}, ou nenhuma das duas subcategorias, ou seja somente \textbf{categórico}.
-
-Um exemplo de \textbf{dado categórico}, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).
-
-O dado do tipo \textbf{categórico binário} é um tipo especial quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
-
-O dado do tipo \textbf{categórico ordinal} é quando o valor do dado é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
-
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-Variável & Tipo do dado \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Idade (Ex: 14, 17, 23) & numérico discreto \\
-Doença (Ausente, Presente) & categório binário \\
-Story Points (1, 3, 5, 7 \ldots{} ) & categorico ordinal \\
-Ano (2021, 2022, \ldots) & numérico discreto \\
-Altura (1,79 - 2,05 - \ldots) & numérico contínuo \\
-Estado Civil (Casado, Solteiro) & categórico binário \\
-Cores preferidas (Azul, verde, vermelho) & categórico \\
-\end{longtable}
+A função \textbf{mean,} no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função mesmo nome, porém disponível na biblioteca statistics do python.
 
 \hypertarget{anuxe1lise-exploratuxf3ria-dos-dados}{%
 \chapter{Análise exploratória dos dados}\label{anuxe1lise-exploratuxf3ria-dos-dados}}
@@ -300,6 +449,30 @@ Podemos considerar essa necessidade de estudos anterior ao processo de inferênc
 
 R
 
+\begin{verbatim}
+## 
+## Attaching package: 'data.table'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:lubridate':
+## 
+##     hour, isoweek, mday, minute, month, quarter, second, wday, week,
+##     yday, year
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     between, first, last
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     transpose
+\end{verbatim}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{14}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{4}\NormalTok{ , }\DecValTok{12}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{)}
@@ -311,7 +484,7 @@ R
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-8-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-11-1.pdf}
 
 Python
 
@@ -325,7 +498,7 @@ Python
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-12-1.pdf}
 
 Veja a imagem ``Amostra 1'' acima. Nela visualmente percebemos uma relação linear direta entre as duas variáveis, podemos confirmar isso analisando o gráfico de pontos e o valor da correlação, abaixo.
 
@@ -369,7 +542,7 @@ R
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-12-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-15-1.pdf}
 
 Python
 
@@ -381,7 +554,7 @@ Python
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-13-1.pdf}
+\includegraphics{_main_files/figure-latex/unnamed-chunk-16-1.pdf}
 
 Na amostra 2 percebemos uma relação em forma de curva, quando verificamos a correlação verificamos o mesmo valor de 0.81 dos dados da amostra 1.
 

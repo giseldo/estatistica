@@ -1,0 +1,164 @@
+---
+title: "Aprenda Estatística"
+author: "Giseldo da Silva Neo"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+description: |
+  Aprenda Estatística com Giseldo Neo
+link-citations: yes
+github-repo: giseldo/estatistica
+---
+
+# Introdução
+
+```{r echo=FALSE}
+library('readr')
+```
+
+É importante começarmos pelos conceitos básicos para criar um vocabulário consistente e permitir uma comunicação clara entre os interessados em discutir e aprender estatística e análise de dados. Estatística e análise de dados é uma habilidade crucial no processo de extração de informação para tomada de decisão. A quantidade de dados disponível para consulta vem crescendo exponencialmente e analisar estes dados tem sido útil para diversas organizações.
+
+## Estimativas de localização
+
+Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.
+
+Código R
+
+```{r}
+idades <-c(14,15,16,14,17)
+idades
+```
+
+Código Python
+
+```{python}
+idades = [14, 15, 16, 14, 17]
+print(idades)
+```
+
+Podemos representar essa lista com um número mais simples, que pode resumir ou representar aquela lista original. Para isso, utilizamos as **estimativas de localização [@bruce2020practical]**. As mais comuns são **média** e **mediana**.
+
+### Média
+
+A média é calculada dividindo a soma de todos os números da lista pela quantidade de itens. Sua fórmula matemática é apresentada em FIGURA XXX. Onde i é a quantidade de itens da lista e $x_i$ é o enésimo item da lista. O termo média também pode ser representado pelo símbolo $X$
+
+No nosso exemplo se fossemos calcular manualmente a média da lista **idade**, o cálculo seria:
+
+Código R
+
+```{r}
+( 14 + 15 + 16 + 14 + 17 ) / 5
+```
+
+Código Python
+
+```{python}
+print(( 14 + 15 + 16 + 14 + 17 ) / 5)
+```
+
+Porém, podemos utilizar algumas funções que já disponibilizam esse recurso de calular a média. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
+
+Código R
+
+```{r}
+idades <- c(14, 15, 16, 14, 17)
+mean(idades)
+```
+
+Código Python
+
+```{python}
+from statistics import mean 
+idades = [14, 15, 16, 14, 17]
+print(mean(idades))
+```
+
+A função **mean,** no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função mesmo nome, porém disponível na biblioteca statistics do python.
+
+## Tipo do Dado (ou caracterização dos dados - númerico, categórico)
+
+É necessário classificar o tipo do dado (também chamado de variável) pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos, irão funcionar com determinados tipos e de determinadas formas. Com o conhecimento do tipo do dado que estamos lidando poderemos realizar as conversões ou tratamentos adicionais que forem necessários.
+
+O tipo do dado pode ser **numérico**, **categórico**, texto ou data. Vide figura abaixo. Dados do tipo numérico e categórico, que são os comumente utilizados em estatistica e aprendizagem de máquina serão melhor detalhados nas seções seguintes.
+
+![Tipo do dado](figuras/tipo_dado.png){width="496"}
+
+Dado do tipo **numérico** é expresso geralmente expresso como um número inteiro ou real. Porém, existem casos em que números inteiros também expressam dados **categóricos**. Já o dado do tipo **categórico** está relacionado a um valor dentro de um lista (geralmente finita) de valores. A formação acadêmcia de uma determinada pessoa (Ensino Fundamental, Médio ou Superior), por exemplo, é um dado do tipo **categórico**. Já o salário, é um dado to tipo **númerico**.
+
+### Numérico (ou quantitativo)
+
+O tipo do dado **numérico**, também chamado de quantitativo, ainda pode ser sub classificado como **numério** **contínuo** ou **númerico** **discreto**.
+
+Um dado **numérico** **contínuo** é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura dos estudantes é um dado do tipo **numérico** **contínuo**.
+
+O dado **numérico discreto** geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade é uma contagem de anos do estudante, é um dado **numérico discreto**.
+
+Na nossa lista de idades, a idade é um dado do estudante do tipo **numérico discreto**.
+
+### Categórico (ou qualitativo)
+
+Um dado é do tipo **categórico** representa um valor dentro de um conjunto ou de uma categoria.
+
+O dado **categórico** pode ser **categótico binário** ou **categórito ordinal**, ou nenhuma das duas subcategorias, ou seja **categórico somente**.
+
+Um exemplo de **dado categórico somente**, é uma lista com as cores preferidas dos estudantes (azul, verde, vermelho), ou o estado civil de uma pessoa (casado, solteiro).
+
+O dado do tipo **categórico binário** é quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo 0 ou 1, existente ou ausente, true ou false, sim e não.
+
+O dado do tipo **categórico ordinal** é quando o valor é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação de altura de estudantes onde somente os valores alto, médio e baixo são permitidos. Nesse exemplo, existe uma ordem, o aluno com altura classificado como baixo tem uma altura menor do que o aluno com altura média.
+
+| Variável                                 | Tipo do dado                                  |
+|------------------------------------------|-----------------------------------------------|
+| Idade (Ex: 14, 17, 23)                   | numérico discreto                             |
+| Doença (Ausente, Presente)               | categório binário                             |
+| Story Points (1, 3, 5, 7 ... )           | categorico ordinal                            |
+| Ano (2021, 2022, ...)                    | numérico discreto                             |
+| Altura (1,79 - 2,05 - ...)               | numérico contínuo                             |
+| Estado Civil (Casado, Solteiro)          | categórico binário                            |
+| Cores preferidas (Azul, verde, vermelho) | categórico somente (nem binário, nem ordinal) |
+
+Os dados geralmente são organizados em formato de tabelas. Onde as linhas representam as obseravações (ou instâncias) e as colunas representam as variáveis.
+
+Vamos utilizar o exemplo de uma empresa que desenvolve software e registra os dados relacionados a seus projetos. Essa empresa mantem o registro de determinada funcionalidade e do tamanho dessa funcionalidade. Cada linha da tabela representa uma funcionalidade (chamada de User Story em projetos que utilizam SCRUM). Cada coluna representa uma informação dessa User Story. As informações que a empresa mantém registro são as variáveis, as colunas da tabela. Uma dessas variáveis é a descriçao, outra é uma estimativa que o desenvolvedor atribui do tamanho funional, chamado Story Point. Essas informações estão dispostas em um arquivo no formato CSV. O código abaixo, carrega esse arquivo e exibe parte de seu conteúdo. Iremos então classificar cada uma das colunas de acordo com o tipo do dado.
+
+Código R
+
+```{r}
+df <- read_csv('data/neodataset/7764.csv')
+head(df)
+```
+
+Código Python
+
+```{python}
+import pandas as pd
+#pd.set_option('max_columns', None)
+df = pd.read_csv('data/neodataset/7764.csv')
+df.head()
+```
+
+A tabela abaixo não é um exemplo dos dados é a classificação, note que o que era antes coluna virou linha.
+
+| Nome da Coluna | Tipo do dado       | Observação                                                                                                  |
+|----------------|--------------------|-------------------------------------------------------------------------------------------------------------|
+| Issuekey       | categorico somente | Apesar de ser um número, não são realizadas operações no número, ele é um identificador único da User Story |
+| storypoints    | numérico discreto  | É um número geralmente de 1 á 100                                                                           |
+| created        | data               | Data em que a User Story Foi criada                                                                         |
+| title          | texto              | Título da User Story                                                                                        |
+| description    | texto              | Desrição da User Story                                                                                      |
+
+A tabela acima apresenta a caracterização dos dados do conjunto de dados neodataset (esse conjunto de dados pode ser baixado em ...). Nessa tabela foram tipificados os dados. É interessante apresentar essa tipificação em estudos cientificos e trabalhos de conclusão de curso, quando estamos lidando com conjuntos de dados. Cabe ressaltar que essa tipificação independe da linguagem. Internamente cada linguagem de programação tem seus tipos especificos e que podem ter pequenas diferenças entre as linguagens.
+
+## Tipo do Atributo (Preditor, Alvo)
+
+Nos modelos de aprendizagem de máquina (quando lidamos com algoritmos classificados como supervisionados) e de inferência estatistica o dado também pode ser classificado entre atributo preditor ou atributo alvo. Atributo preditor, são os atributos que serão utilizados para realizar a previsão, geralmente um ou mais atributos. Atributo alvo é o atributo que queremos 'advinhar (ou dar o melhor chute técnico)' com os modelos preditivos. Atributo preditor muitas vezes é chamado de vairável independente, e atributo alvo de variável dependente.
+
+| Col1       | Tipo do dado (numerico ou categorico) | Tipo do atributo (preditor ou alvo) |
+|------------|---------------------------------------|-------------------------------------|
+| IssueKey   | categorigo somente                    | \-                                  |
+| StoryPoint | numerico discreto                     | alvo                                |
+| Created    | data                                  | \-                                  |
+| Title      | texto                                 | preditor                            |
+| Desription | texto                                 | preditor                            |
+
+Ou seja, no modelo proposto, o título e a descrição serão os atributos preditores do atributo alvo, espera-se que os dados do título e da descrição contenham as informações necessárias para a estimativa em Story Points.

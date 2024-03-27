@@ -1,12 +1,12 @@
 {
-    "id": "71953EE9",
+    "id": "ACE26AE3",
     "path": "C:/Projetos/estatistica/01-EDA.Rmd",
     "project_path": "01-EDA.Rmd",
     "type": "r_markdown",
     "hash": "791311666",
     "contents": "",
     "dirty": false,
-    "created": 1710162692712.0,
+    "created": 1711198689466.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
@@ -14,12 +14,12 @@
         "source_window_id": "",
         "Source": "Source",
         "cursorPosition": "65,0",
-        "scrollLine": "35",
+        "scrollLine": "0",
         "rmdVisualMode": "true",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2362:2307.636474609375",
+        "rmdVisualModeLocation": "2:272.7272644042969",
         "useRainbowParens": "false"
     },
     "folds": "",
@@ -27,7 +27,7 @@
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1710173378786,
+    "last_content_update": 1711198694855,
     "read_only": false,
     "read_only_alternatives": []
 }
