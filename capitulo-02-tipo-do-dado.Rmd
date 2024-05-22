@@ -1,0 +1,108 @@
+# Classificação do dado
+
+Vamos classificar o dado em categorias que nos permitirão uma comunicação mais consistente e com menos redundância. Essas classificações facilitarão a nossa comunicação. 
+
+## Dado e informação
+
+Dado e informação são coisas diferentes. Os dados são os fatos brutos. Por exemplo, o nome de um estudante e o número do CPF são exemplos de dados brutos.
+
+Informação é quando utilizamos os dados aplicados em um contexto. Por exemplo, os dados do nome e do CPF de um estudante podem fazer parte de uma lista de alunos matriculados em um curso técnico de informática de um Instituto Federal. Os dados organizados agora trazem uma informação associada.
+
+Apesar dessa divisão teórica entre dado e informação, os termos serão usados indiscriminadamente aqui e com o mesmo significado. Também chamaremos no texto dado como variável, ou atributo
+
+
+## Tipo do dado (Qualitativo ou Quantitativo)
+
+É necessário classificar o dado quanto ao seu tipo pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos de inferência (termos que serão explicados mais a frente), irão funcionar com determinados tipos de determinadas formas. Logo, com o conhecimento da classificação do tipo do dado poderemos realizar, ou não, as conversões ou tratamentos adicionais que forem necessários.
+
+Utilizaremos dois tipos de dados principais o **qualitativo** e **quantitativo**.
+
+O tipo do dado pode ser: **quantitativo** (também chamado de numérico); **qualitativo** (também chamado de categórico); ou se enquadram na categoria **especial** que engloba outros tipos.
+
+Um dado do tipo **quantitativo** é expresso geralmente como um número. Porém, existem casos em que números inteiros também expressam dados do tipo **qualitativo,** portanto não é só ter número que já podemos classificá-lo como **quantitativo**.
+
+Já o dado do tipo **qualitativo** está relacionado a um valor dentro de um conjunto de itens geralmente finito, porém nem sempre.
+
+Por exemplo, a formação acadêmica de uma determinada pessoa, que pode ser Ensino Fundamental completo, Médio completo ou Superior completo, é um dado do tipo **qualitativo**. Já o salário de um trabalhador é um dado to tipo **quantitativo**.
+
+### Quantitativo
+
+O tipo do dado **quantitativo**, também chamado de numérico, ainda pode ser sub classificado como **quantitativo contínuo** ou **quantitativo discreto**.
+
+Um dado **quantitativo contínuo** é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura de um estudante (por exemplo 1,80 metros) é um dado do tipo **quantitativo contínuo**.
+
+O dado **quantitativo discreto** geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade de um estudante (42 anos) é uma contagem, é um dado **quantitativo discreto**.
+
+### Qualitativo
+
+Um dado é do tipo **qualitativo** quando representa um valor dentro de um conjunto ou de uma categoria.
+
+O dado **qualitativo** pode ser **qualitativo** **binário** ou **qualitativo** **ordinal**, ou nenhuma das duas subcategorias, ou seja **qualitativo** **somente**.
+
+Um exemplo de **dado qualitativo** **somente**, é a cor preferida por uma pessoa (por exemplo eu prefiro a cor azul), ou o estado civil de uma pessoa.
+
+O dado do tipo **qualitativo** **binário** é quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo, 0 ou 1, existente ou ausente, true ou false, sim e não, aprovado ou reprovado.
+
+O dado do tipo **qualitativo** **ordinal** é quando o valor é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação dos seres humanos entre criança, jovem e adulto. Nesse exemplo, existe uma ordem temporal, o jovem já foi uma criança, o adulto já foi um jovem.
+
+### Exemplos
+
+| Variável                                 | Tipo do dado                                           |
+|----------------------------------|--------------------------------------|
+| Idade (14, 17, 23)                       | **quantitativo** discreto                              |
+| Doença (Ausente, Presente)               | **qualitativo** binário                                |
+| Story Points (1, 3, 5, 7 ... )           | **qualitativo** ordinal                                |
+| Ano (2021, 2022, ...)                    | **quantitativo** discreto                              |
+| Altura (1,79 - 2,05 - ...)               | **quantitativo** contínuo                              |
+| Estado Civil (Casado, Solteiro)          | **qualitativo** binário                                |
+| Cores preferidas (Azul, verde, vermelho) | **qualitativo** **somente** (nem binário, nem ordinal) |
+
+
+## Tipo do dado (Preditor, Alvo)
+
+Nos modelos de aprendizagem de máquina (quando lidamos com algoritmos classificados como supervisionados) e de inferência estatistica o dado também pode ser classificado entre atributo preditor ou atributo alvo. Atributo preditor, são os atributos que serão utilizados para realizar a previsão, geralmente um ou mais atributos. Atributo alvo é o atributo que queremos 'advinhar (ou dar o melhor chute técnico)' com os modelos preditivos. Atributo preditor muitas vezes é chamado de vairável independente, e atributo alvo de variável dependente.
+
+| Col1       | Tipo do dado (numerico ou categorico) | Tipo do atributo (preditor ou alvo) |
+|------------------|---------------------------|---------------------------|
+| IssueKey   | categorigo somente                    | \-                                  |
+| StoryPoint | numerico discreto                     | alvo                                |
+| Created    | data                                  | \-                                  |
+| Title      | texto                                 | preditor                            |
+| Desription | texto                                 | preditor                            |
+
+Ou seja, no modelo proposto, o título e a descrição serão os atributos preditores do atributo alvo, espera-se que os dados do título e da descrição contenham as informações necessárias para a estimativa em Story Points.
+
+## Tabelas
+
+Os dados geralmente são organizados em formato de tabelas. Onde as linhas representam as obseravações (ou instâncias) e as colunas representam as variáveis.
+
+Vamos utilizar o exemplo de uma empresa que desenvolve software e registra os dados relacionados a seus projetos. Essa empresa mantem o registro de determinada funcionalidade e do tamanho dessa funcionalidade. Cada linha da tabela representa uma funcionalidade (chamada de User Story em projetos que utilizam SCRUM). Cada coluna representa uma informação dessa User Story. As informações que a empresa mantém registro são as variáveis, as colunas da tabela. Uma dessas variáveis é a descriçao, outra é uma estimativa que o desenvolvedor atribui do tamanho funional, chamado Story Point. Essas informações estão dispostas em um arquivo no formato CSV. O código abaixo, carrega esse arquivo e exibe parte de seu conteúdo. Iremos então classificar cada uma das colunas de acordo com o tipo do dado.
+
+Código R
+
+```{r}
+df <- read_csv('data/neodataset/7764.csv')
+head(df)
+```
+
+Código Python
+
+```{python}
+import pandas as pd
+#pd.set_option('max_columns', None)
+df = pd.read_csv('data/neodataset/7764.csv')
+df.head()
+```
+
+A tabela abaixo não é um exemplo dos dados é a classificação, note que o que era antes coluna virou linha.
+
+| Nome da Coluna | Tipo do dado       | Observação                                                                                                  |
+|------------------|------------------|------------------------------------|
+| Issuekey       | categorico somente | Apesar de ser um número, não são realizadas operações no número, ele é um identificador único da User Story |
+| storypoints    | numérico discreto  | É um número geralmente de 1 á 100                                                                           |
+| created        | data               | Data em que a User Story Foi criada                                                                         |
+| title          | texto              | Título da User Story                                                                                        |
+| description    | texto              | Desrição da User Story                                                                                      |
+
+A tabela acima apresenta a caracterização dos dados do conjunto de dados neodataset (esse conjunto de dados pode ser baixado em ...). Nessa tabela foram tipificados os dados. É interessante apresentar essa tipificação em estudos cientificos e trabalhos de conclusão de curso, quando estamos lidando com conjuntos de dados. Cabe ressaltar que essa tipificação independe da linguagem. Internamente cada linguagem de programação tem seus tipos especificos e que podem ter pequenas diferenças entre as linguagens.
+

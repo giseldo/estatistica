@@ -1,0 +1,7 @@
+# Python
+
+Com python é possível realizar operações matemáticas, tais como, soma, divisão ou multiplicação, direto no interpretador de codigo.
+
+```{python}
+print(2+2)
+```

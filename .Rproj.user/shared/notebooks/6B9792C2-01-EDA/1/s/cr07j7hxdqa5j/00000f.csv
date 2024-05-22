@@ -1,4 +1,0 @@
-"0","from statistics import correlation"
-"0","print(correlation(x, y))"
-"1","0.81642051634484
-"

@@ -1,0 +1,7 @@
+# Introdução
+
+Thomas H. Davenport e DJ Patil publicaram uma matéria de opinião em 2012 na conceituada revista de administração e negócios Harvard Business Review afirmando que um dos empregos mais sexy do século 21 seria o cientista de dados (termo cunhado pelo próprio DJ Patil) e deu um exemplo do crescimento em visualizações do linkedin quando foi utilizado o recurso de pessoas que talvez você conheça, recurso este que utilizava a extensa base de dados de conexões do linkedin para fazer um cruzamento do tipo: se uma pessoa qualquer conhece fulano e fulano conhece ciclano então essa pessoa qualquer tem grande chance de conhecer ciclano [@hbr2012]. Porém, acredito que outras pessoas possam ter visões diferentes do que é um emprego sexy, como por exemplo Joel Grus (2016) [@grus2016]. 
+
+Particularmente, a escolha do que é ser sexy foge do escopo desse livro. Porém, existe um relativo consenso de que o campo está em  evidência. Muitas pesquisas estão sendo escritas sobre esse tema, com experimentos e achados importantes. Logo, a habilidade em lidar com esses dados e reportá-los é crucial para o profissional que deseja extrair informação útil e construir conhecimento.
+
+Vamos começar pelos conceitos básicos e criar um vocabulário consistente nas seções seguintes.

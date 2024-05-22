@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Tipo de Dados | Aprenda Estatística</title>
+  <meta name="description" content="Capítulo 2 Tipo de Dados | Aprenda Estatística com Giseldo Neo" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Tipo de Dados | Aprenda Estatística" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Capítulo 2 Tipo de Dados | Aprenda Estatística com Giseldo Neo" />
+  <meta name="github-repo" content="giseldo/estatistica" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Tipo de Dados | Aprenda Estatística" />
+  
+  <meta name="twitter:description" content="Capítulo 2 Tipo de Dados | Aprenda Estatística com Giseldo Neo" />
+  
+
+<meta name="author" content="Giseldo da Silva Neo" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introdução.html"/>
+<link rel="next" href="estimativas-de-localização.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Aprenda estatística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácil</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html"><i class="fa fa-check"></i><b>2</b> Tipo de Dados</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html#dado-e-informação"><i class="fa fa-check"></i><b>2.1</b> Dado e informação</a></li>
+<li class="chapter" data-level="2.2" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html#classificação-do-dado"><i class="fa fa-check"></i><b>2.2</b> Classificação do dado</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html#tipo-do-dado"><i class="fa fa-check"></i><b>2.2.1</b> Tipo do dado</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html#tabelas"><i class="fa fa-check"></i><b>2.3</b> Tabelas</a></li>
+<li class="chapter" data-level="2.4" data-path="tipo-de-dados.html"><a href="tipo-de-dados.html#tipo-do-dado-atributo-preditor-alvo"><i class="fa fa-check"></i><b>2.4</b> Tipo do dado / atributo (Preditor, Alvo)</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimativas-de-localização.html"><a href="estimativas-de-localização.html"><i class="fa fa-check"></i><b>3</b> Estimativas de localização</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estimativas-de-localização.html"><a href="estimativas-de-localização.html#média"><i class="fa fa-check"></i><b>3.1</b> Média</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="análise-exploratória-dos-dados.html"><a href="análise-exploratória-dos-dados.html"><i class="fa fa-check"></i><b>4</b> Análise exploratória dos dados</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="análise-exploratória-dos-dados.html"><a href="análise-exploratória-dos-dados.html#introdução-1"><i class="fa fa-check"></i><b>4.1</b> Introdução</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>5</b> Python</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aprenda Estatística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tipo-de-dados" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Tipo de Dados<a href="tipo-de-dados.html#tipo-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="dado-e-informação" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Dado e informação<a href="tipo-de-dados.html#dado-e-informação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dado e informação são coisas diferentes. Os dados são os fatos brutos. Por exemplo, o nome de um estudante e o número do CPF são exemplos de dados brutos.</p>
+<p>Informação é quando utilizamos os dados aplicados em um contexto. Por exemplo, os dados do nome e do CPF de um estudante podem fazer parte de uma lista de alunos matriculados em um curso técnico de informática de um Instituto Federal. Os dados organizados agora trazem uma informação associada.</p>
+<p>Apesar dessa divisão teórica entre dado e informação, os termos serão usados indiscriminadamente aqui e com o mesmo significado.</p>
+</div>
+<div id="classificação-do-dado" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Classificação do dado<a href="tipo-de-dados.html#classificação-do-dado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos classificar o dado em algumas categorias que nos permitirão uma comunicação mais consistente e com menos redundância. Essas classificações facilitarão a nossa comunicação em assuntos mais avaçados.</p>
+<div id="tipo-do-dado" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Tipo do dado<a href="tipo-de-dados.html#tipo-do-dado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>É necessário classificar o dado quanto ao seu tipo pois os algoritmos de aprendizagem de máquina, ou os modelos estatísticos de inferência (termos que serão explicados mais a frente), irão funcionar com determinados tipos de determinadas formas. Logo, com o conhecimento da classificação do tipo do dado poderemos realizar, ou não, as conversões ou tratamentos adicionais que forem necessários.</p>
+<p>Utilizaremos dois tipos de dados principais o <strong>qualitativo</strong> e <strong>quantitativo</strong>.</p>
+<p>O tipo do dado pode ser: <strong>quantitativo</strong> (também chamado de numérico); <strong>qualitativo</strong> (também chamado de categórico); ou se enquadram na categoria <strong>especial</strong> que engloba outros tipos.</p>
+<p>Um dado do tipo <strong>quantitativo</strong> é expresso geralmente como um número. Porém, existem casos em que números inteiros também expressam dados do tipo <strong>qualitativo,</strong> portanto não é só ter número que já podemos classificá-lo como <strong>quantitativo</strong>.</p>
+<p>Já o dado do tipo <strong>qualitativo</strong> está relacionado a um valor dentro de um conjunto de itens geralmente finito, porém nem sempre.</p>
+<p>Por exemplo, a formação acadêmica de uma determinada pessoa, que pode ser Ensino Fundamental completo, Médio completo ou Superior completo, é um dado do tipo <strong>qualitativo</strong>. Já o salário de um trabalhador é um dado to tipo <strong>quantitativo</strong>.</p>
+<div id="quantitativo" class="section level4 hasAnchor" number="2.2.1.1">
+<h4><span class="header-section-number">2.2.1.1</span> Quantitativo<a href="tipo-de-dados.html#quantitativo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>O tipo do dado <strong>quantitativo</strong>, também chamado de numérico, ainda pode ser sub classificado como <strong>quantitativo contínuo</strong> ou <strong>quantitativo discreto</strong>.</p>
+<p>Um dado <strong>quantitativo contínuo</strong> é quando o dado pode ser qualquer número em um intervalo de números reais - lembrando que o conjunto de número reais engloba os números inteiros -. Geralmente é o resultado de uma medida, por exemplo, a altura de um estudante (por exemplo 1,80 metros) é um dado do tipo <strong>quantitativo contínuo</strong>.</p>
+<p>O dado <strong>quantitativo discreto</strong> geralmente é resultado de uma contagem - um número inteiro -, por exemplo, a idade de um estudante (42 anos) é uma contagem, é um dado <strong>quantitativo discreto</strong>.</p>
+</div>
+<div id="qualitativo" class="section level4 hasAnchor" number="2.2.1.2">
+<h4><span class="header-section-number">2.2.1.2</span> Qualitativo<a href="tipo-de-dados.html#qualitativo" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Um dado é do tipo <strong>qualitativo</strong> quando representa um valor dentro de um conjunto ou de uma categoria.</p>
+<p>O dado <strong>qualitativo</strong> pode ser <strong>qualitativo</strong> <strong>binário</strong> ou <strong>qualitativo</strong> <strong>ordinal</strong>, ou nenhuma das duas subcategorias, ou seja <strong>qualitativo</strong> <strong>somente</strong>.</p>
+<p>Um exemplo de <strong>dado qualitativo</strong> <strong>somente</strong>, é a cor preferida por uma pessoa (por exemplo eu prefiro a cor azul), ou o estado civil de uma pessoa.</p>
+<p>O dado do tipo <strong>qualitativo</strong> <strong>binário</strong> é quando ele somente pode assumir dois valores no universo de valores possíveis. Por exemplo, 0 ou 1, existente ou ausente, true ou false, sim e não, aprovado ou reprovado.</p>
+<p>O dado do tipo <strong>qualitativo</strong> <strong>ordinal</strong> é quando o valor é um elemento de um conjunto que pode ser ordenado, por exemplo, imagine a classificação dos seres humanos entre criança, jovem e adulto. Nesse exemplo, existe uma ordem temporal, o jovem já foi uma criança, o adulto já foi um jovem.</p>
+</div>
+<div id="exemplos-de-tipo-do-dado" class="section level4 hasAnchor" number="2.2.1.3">
+<h4><span class="header-section-number">2.2.1.3</span> Exemplos de tipo do dado<a href="tipo-de-dados.html#exemplos-de-tipo-do-dado" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<table>
+<colgroup>
+<col width="47%" />
+<col width="52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variável</th>
+<th>Tipo do dado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Idade (14, 17, 23)</td>
+<td><strong>quantitativo</strong> discreto</td>
+</tr>
+<tr class="even">
+<td>Doença (Ausente, Presente)</td>
+<td><strong>qualitativo</strong> binário</td>
+</tr>
+<tr class="odd">
+<td>Story Points (1, 3, 5, 7 … )</td>
+<td><strong>qualitativo</strong> ordinal</td>
+</tr>
+<tr class="even">
+<td>Ano (2021, 2022, …)</td>
+<td><strong>quantitativo</strong> discreto</td>
+</tr>
+<tr class="odd">
+<td>Altura (1,79 - 2,05 - …)</td>
+<td><strong>quantitativo</strong> contínuo</td>
+</tr>
+<tr class="even">
+<td>Estado Civil (Casado, Solteiro)</td>
+<td><strong>qualitativo</strong> binário</td>
+</tr>
+<tr class="odd">
+<td>Cores preferidas (Azul, verde, vermelho)</td>
+<td><strong>qualitativo</strong> <strong>somente</strong> (nem binário, nem ordinal)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabelas" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Tabelas<a href="tipo-de-dados.html#tabelas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Os dados geralmente são organizados em formato de tabelas. Onde as linhas representam as obseravações (ou instâncias) e as colunas representam as variáveis.</p>
+<p>Vamos utilizar o exemplo de uma empresa que desenvolve software e registra os dados relacionados a seus projetos. Essa empresa mantem o registro de determinada funcionalidade e do tamanho dessa funcionalidade. Cada linha da tabela representa uma funcionalidade (chamada de User Story em projetos que utilizam SCRUM). Cada coluna representa uma informação dessa User Story. As informações que a empresa mantém registro são as variáveis, as colunas da tabela. Uma dessas variáveis é a descriçao, outra é uma estimativa que o desenvolvedor atribui do tamanho funional, chamado Story Point. Essas informações estão dispostas em um arquivo no formato CSV. O código abaixo, carrega esse arquivo e exibe parte de seu conteúdo. Iremos então classificar cada uma das colunas de acordo com o tipo do dado.</p>
+<p>Código R</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tipo-de-dados.html#cb2-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;data/neodataset/7764.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## Rows: 355 Columns: 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): title, description
+## dbl  (2): issuekey, storypoints
+## dttm (1): created
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tipo-de-dados.html#cb4-1" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   issuekey created             title                     description storypoints
+##      &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;
+## 1 29688087 2020-01-17 00:50:48 Update templates for web… &quot;Relates t…           1
+## 2 29682716 2020-01-16 19:21:38 Make sure that we Captur… &quot;This was …           1
+## 3 29644971 2020-01-15 21:17:03 Propose new IA for Brand… &quot;## Goals\…           1
+## 4 29494181 2020-01-10 19:20:50 Cache `node_modules` for… &quot;# UPDATE …           1
+## 5 29437529 2020-01-09 10:26:51 Disable all remaining un… &quot;Similar t…           1
+## 6 29358963 2020-01-07 08:35:44 Disable unnecessary jobs… &quot;As discus…           1</code></pre>
+<p>Código Python</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="tipo-de-dados.html#cb6-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="tipo-de-dados.html#cb6-2" tabindex="-1"></a><span class="co">#pd.set_option(&#39;max_columns&#39;, None)</span></span>
+<span id="cb6-3"><a href="tipo-de-dados.html#cb6-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/neodataset/7764.csv&#39;</span>)</span>
+<span id="cb6-4"><a href="tipo-de-dados.html#cb6-4" tabindex="-1"></a>df.head()</span></code></pre></div>
+<pre><code>##    issuekey  ... storypoints
+## 0  29688087  ...           1
+## 1  29682716  ...           1
+## 2  29644971  ...           1
+## 3  29494181  ...           1
+## 4  29437529  ...           1
+## 
+## [5 rows x 5 columns]</code></pre>
+<p>A tabela abaixo não é um exemplo dos dados é a classificação, note que o que era antes coluna virou linha.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nome da Coluna</th>
+<th>Tipo do dado</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Issuekey</td>
+<td>categorico somente</td>
+<td>Apesar de ser um número, não são realizadas operações no número, ele é um identificador único da User Story</td>
+</tr>
+<tr class="even">
+<td>storypoints</td>
+<td>numérico discreto</td>
+<td>É um número geralmente de 1 á 100</td>
+</tr>
+<tr class="odd">
+<td>created</td>
+<td>data</td>
+<td>Data em que a User Story Foi criada</td>
+</tr>
+<tr class="even">
+<td>title</td>
+<td>texto</td>
+<td>Título da User Story</td>
+</tr>
+<tr class="odd">
+<td>description</td>
+<td>texto</td>
+<td>Desrição da User Story</td>
+</tr>
+</tbody>
+</table>
+<p>A tabela acima apresenta a caracterização dos dados do conjunto de dados neodataset (esse conjunto de dados pode ser baixado em …). Nessa tabela foram tipificados os dados. É interessante apresentar essa tipificação em estudos cientificos e trabalhos de conclusão de curso, quando estamos lidando com conjuntos de dados. Cabe ressaltar que essa tipificação independe da linguagem. Internamente cada linguagem de programação tem seus tipos especificos e que podem ter pequenas diferenças entre as linguagens.</p>
+</div>
+<div id="tipo-do-dado-atributo-preditor-alvo" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Tipo do dado / atributo (Preditor, Alvo)<a href="tipo-de-dados.html#tipo-do-dado-atributo-preditor-alvo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nos modelos de aprendizagem de máquina (quando lidamos com algoritmos classificados como supervisionados) e de inferência estatistica o dado também pode ser classificado entre atributo preditor ou atributo alvo. Atributo preditor, são os atributos que serão utilizados para realizar a previsão, geralmente um ou mais atributos. Atributo alvo é o atributo que queremos ‘advinhar (ou dar o melhor chute técnico)’ com os modelos preditivos. Atributo preditor muitas vezes é chamado de vairável independente, e atributo alvo de variável dependente.</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="37%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Col1</th>
+<th>Tipo do dado (numerico ou categorico)</th>
+<th>Tipo do atributo (preditor ou alvo)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IssueKey</td>
+<td>categorigo somente</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>StoryPoint</td>
+<td>numerico discreto</td>
+<td>alvo</td>
+</tr>
+<tr class="odd">
+<td>Created</td>
+<td>data</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Title</td>
+<td>texto</td>
+<td>preditor</td>
+</tr>
+<tr class="odd">
+<td>Desription</td>
+<td>texto</td>
+<td>preditor</td>
+</tr>
+</tbody>
+</table>
+<p>Ou seja, no modelo proposto, o título e a descrição serão os atributos preditores do atributo alvo, espera-se que os dados do título e da descrição contenham as informações necessárias para a estimativa em Story Points.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introdução.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="estimativas-de-localização.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/giseldo/estatistica/edit/main/capitulo-02-tipo-do-dado.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+# Estimativas de localização
+
+Muitas vezes é conveniente representar um conjunto de números de uma forma mais simples. Nem sempre temos a possibilidade de lidar com vários números, por limitação ou por falta de praticidade. Por exemplo, imagine uma sala de aula com 5 estudantes, vamos montar uma lista da idade de todos os estudantes nessa sala no R e no Python, duas linguagens de programação comumente utilizadas em análise de dados.
+
+O código a seguir criar uma lista com 5 idades e depois imprime essa mesma lista na linguagem R
+
+```{r}
+idades <- c(14,15,16,14,17)
+idades
+```
+
+O código a seguir criar uma lista com 5 idades e depois imprime essa mesma lista na linguagem Python
+
+```{python}
+idades = [14, 15, 16, 14, 17] 
+print(idades)
+```
+
+Podemos representar essa lista com um número mais simples, que pode resumir ou representar aquela lista original. Para isso, utilizamos as estimativas de localização [@bruce2020practical]. As mais comuns são média e mediana.
+
+## Média
+
+A média é calculada dividindo a soma de todos os números da lista pela quantidade de itens. Sua fórmula matemática é apresentada em FIGURA XXX. Onde i é a quantidade de itens da lista e $x_i$ é o enésimo item da lista. O termo média também pode ser representado pelo símbolo $X$
+
+No nosso exemplo se fossemos calcular manualmente a média da lista idade, o cálculo seria:
+
+Código R
+
+{r} ( 14 + 15 + 16 + 14 + 17 ) / 5
+
+Código Python
+
+{python} print(( 14 + 15 + 16 + 14 + 17 ) / 5)
+
+Porém, podemos utilizar algumas funções que já disponibilizam esse recurso de calular a média. O código para criar uma lista e verificar a média dessa lista, utilizando as funções, no R e no Python, seria o seguinte:
+
+Código R
+
+{r} idades \<- c(14, 15, 16, 14, 17) mean(idades)
+
+Código Python
+
+{python} from statistics import mean idades = [14, 15, 16, 14, 17] print(mean(idades))
+
+A função mean, no R, recebe como parâmetro uma lista de itens e retorna a média dessa lista, no python utilizei a função mesmo nome, porém disponível na biblioteca statistics do python.
